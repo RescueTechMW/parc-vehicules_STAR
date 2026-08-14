@@ -1,4 +1,4 @@
-console.log("APP VERSION 14-08-2026 10h37");
+console.log("APP VERSION 14-08-2026 10h45");
 
 const vehicule =
 document.getElementById("vehicule");
@@ -19,15 +19,35 @@ vehicule.addEventListener("change", () => {
 function enregistrer(){
 
     const km =
-    document.getElementById("kilometres").value;
+    document.getElementById(
+        "kilometres"
+    ).value;
+
+    document.getElementById(
+        "dernierKm"
+    ).innerHTML =
+    km + " km";
+
+    document.getElementById(
+        "derniereDate"
+    ).innerHTML =
+    new Date().toLocaleDateString("fr-CH");
 
     document.getElementById(
         "message"
     ).innerHTML =
-    "✅ " +
-    vehicule.value +
-    " : " +
-    km +
-    " km enregistré";
+    "✅ Kilométrage enregistré";
 
+}
+
+function modifierDernier(){
+
+    document.getElementById(
+        "kilometres"
+    ).focus();
+
+    document.getElementById(
+        "message"
+    ).innerHTML =
+    "✏️ Modification possible";
 }
