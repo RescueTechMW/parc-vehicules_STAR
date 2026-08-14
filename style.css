@@ -6,12 +6,13 @@ body{
 }
 
 .container{
-    max-width:450px;
+    max-width:420px;
     margin:auto;
     background:white;
     padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.10);
+    border-radius:30px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.08);
+
 }
 
 #logo{
@@ -71,4 +72,13 @@ button:hover{
     margin-top:20px;
     font-weight:bold;
     color:#008000;
+}
+.btn-save{
+    background:#003A8C;
+    color:white;
+}
+.btn-edit{
+    background:#EF3E42;
+    color:white;
+    margin-top:10px;
 }
