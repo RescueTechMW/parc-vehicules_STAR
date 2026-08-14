@@ -7,16 +7,27 @@
 
     <title>Parc Véhicules STAR</title>
 
-    <link.css
-</head>
+ </head>
 
 <body>
 
     <div class="container">
 
-        <img src="images/logo-star.png" 🚑 Parc Véhicules</h1>
+        <img src="logo-star.png" id="logo" alt="STAR Ambulances">
 
-        <label for="vehicule">Véhicule</label>
+        <h1>Parc Véhicules</h1>
+
+        <div class="last-km">
+
+            <span>Dernier relevé</span>
+
+            <h2 id="dernierKm">408'038 km</h2>
+
+            <small id="derniereDate">16.08.2026</small>
+
+        </div>
+
+        <label>Véhicule</label>
 
         <select id="vehicule">
             <option>413</option>
@@ -30,24 +41,30 @@
             <option>SMART</option>
         </select>
 
-        <label for="kilometres">Kilométrage actuel</label>
+        <label>Kilométrage actuel</label>
 
         <input
             type="number"
             id="kilometres"
             placeholder="Entrer le compteur">
 
-        <button onclick="enregistrer()">
+        <button
+            class="btn-save"
+            onclick="enregistrer()">
             Enregistrer
+        </button>
+
+        <button
+            class="btn-edit"
+            onclick="modifierDernier()">
+            Modifier le dernier relevé
         </button>
 
         <p id="message"></p>
 
     </div>
 
-    app.jsscript>
 
 </body>
 
 </html>
-      
