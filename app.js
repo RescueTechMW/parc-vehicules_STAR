@@ -1,4 +1,4 @@
-console.log("APP VERSION 14-08-2026 16h30");
+console.log("APP VERSION 14-08-2026 16h35");
 
 const vehicule =
 document.getElementById("vehicule");
@@ -88,3 +88,18 @@ function modifierDernier(){
     ).innerHTML =
     "✏️ Modification possible";
 }
+document.getElementById(
+    "dernierVehicule"
+).innerHTML =
+vehicule;
+
+document.getElementById(
+    "dernierKm"
+).innerHTML =
+Number(compteur).toLocaleString("fr-CH")
++ " km";
+
+document.getElementById(
+    "derniereDate"
+).innerHTML =
+new Date().toLocaleDateString("fr-CH");
