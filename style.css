@@ -1,45 +1,19 @@
 body{
     font-family:'Poppins',sans-serif;
-    background:#f4f4f4;
+    background:#eef2f7;
     margin:0;
     padding:20px;
 }
 
 .container{
-    max-width:400px;
+    max-width:450px;
     margin:auto;
     background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.10);
 }
 
-h1{
-    text-align:center;
-}
-
-label{
-    display:block;
-    margin-top:15px;
-}
-
-select,
-input,
-button{
-    width:100%;
-    padding:12px;
-    margin-top:5px;
-    box-sizing:border-box;
-}
-
-button{
-    margin-top:20px;
-    background:#0078d4;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-}
 #logo{
     display:block;
     width:220px;
@@ -48,16 +22,53 @@ button{
 
 h1{
     text-align:center;
-    color:#003B8E;
+    color:#003A8C;
+    margin-bottom:25px;
 }
-#message{
-    margin-top:15px;
-    text-align:center;
-    font-weight:bold;
-}
-#logo{
+
+label{
     display:block;
-    width:250px;
-    max-width:100%;
-    margin:0 auto 20px auto;
+    font-weight:600;
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+select,
+input{
+    width:100%;
+    padding:15px;
+    border:2px solid #d9d9d9;
+    border-radius:12px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+select:focus,
+input:focus{
+    outline:none;
+    border-color:#003A8C;
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:16px;
+    background:#003A8C;
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#002d6d;
+}
+
+#message{
+    text-align:center;
+    margin-top:20px;
+    font-weight:bold;
+    color:#008000;
 }
