@@ -16,27 +16,64 @@ vehicule.addEventListener("change", () => {
 
 });
 
-function enregistrer(){
+async function enregistrer() {
 
-    const km =
-    document.getElementById(
-        "kilometres"
-    ).value;
+    const vehicule =
+        document.getElementById("vehicule").value;
 
-    document.getElementById(
-        "dernierKm"
-    ).innerHTML =
-    km + " km";
+    const compteur =
+        document.getElementById("kilometres").value;
 
-    document.getElementById(
-        "derniereDate"
-    ).innerHTML =
-    new Date().toLocaleDateString("fr-CH");
+    const aujourdHui =
+        new Date();
 
-    document.getElementById(
-        "message"
-    ).innerHTML =
-    "✅ Kilométrage enregistré";
+    const mois =
+        aujourdHui.toLocaleString(
+            "fr-FR",
+            { month: "long" }
+        );
+
+    const annee =
+        aujourdHui.getFullYear();
+
+    try {
+
+        const response =
+            await fetch(
+                "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec",
+                {
+                    method: "POST",
+                    body: JSON.stringify({
+                        annee,
+                        mois,
+                        vehicule,
+                        compteur
+                    })
+                }
+            );
+
+        const resultat =
+            await response.json();
+
+        if(resultat.success){
+
+            document.getElementById(
+                "message"
+            ).innerHTML =
+            "✅ Kilométrage enregistré";
+
+        }
+
+    } catch(error){
+
+        document.getElementById(
+            "message"
+        ).innerHTML =
+        "❌ Erreur d'enregistrement";
+
+        console.error(error);
+
+    }
 
 }
 
