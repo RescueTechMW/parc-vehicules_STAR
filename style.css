@@ -40,7 +40,16 @@ button{
     border-radius:5px;
     cursor:pointer;
 }
+#logo{
+    display:block;
+    width:220px;
+    margin:0 auto 20px auto;
+}
 
+h1{
+    text-align:center;
+    color:#003B8E;
+}
 #message{
     margin-top:15px;
     text-align:center;
