@@ -12,59 +12,64 @@
 
 <body>
 
-    <div class="container">
+  <div class="container">
 
-        <img src="logo-star.png">
+    <img src="logo-star.png" id="logo" alt="STAR Ambulances">
 
-        <h1>Parc Véhicules</h1>
+    <h1>Parc véhicules STAR</h1>
 
-        <div class="last-km">
+    <div class="last-km">
 
-            <span>Dernier relevé</span>
-
-            <h2 id="dernierKm">408'038 km</h2>
-
-            <small id="derniereDate">16.08.2026</small>
-
+        <div class="last-label">
+            Dernier relevé
         </div>
 
-        <label>Véhicule</label>
+        <div id="dernierKm" class="last-value">
+            408'038 km
+        </div>
 
-        <select id="vehicule">
-            <option>413</option>
-            <option>414</option>
-            <option>415</option>
-            <option>416</option>
-            <option>417</option>
-            <option>418</option>
-            <option>419</option>
-            <option>Logistique</option>
-            <option>SMART</option>
-        </select>
-
-        <label>Kilométrage actuel</label>
-
-        <input
-            type="number"
-            id="kilometres"
-            placeholder="Entrer le compteur">
-
-        <button
-            class="btn-save"
-            onclick="enregistrer()">
-            Enregistrer
-        </button>
-
-        <button
-            class="btn-edit"
-            onclick="modifierDernier()">
-            Modifier le dernier relevé
-        </button>
-
-        <p id="message"></p>
+        <div id="derniereDate" class="last-date">
+            16.08.2026
+        </div>
 
     </div>
 
+    <label>Véhicule</label>
+
+    <select id="vehicule">
+        <option>413</option>
+        <option>414</option>
+        <option>415</option>
+        <option>416</option>
+        <option>417</option>
+        <option>418</option>
+        <option>419</option>
+        <option>Logistique</option>
+        <option>SMART</option>
+    </select>
+
+    <label>Nouveau kilométrage</label>
+
+    <input
+        type="number"
+        id="kilometres"
+        placeholder="Ex : 410250">
+
+    <button
+        class="btn-save"
+        onclick="enregistrer()">
+        ✅ Enregistrer
+    </button>
+
+    <button
+        class="btn-edit"
+        onclick="modifierDernier()">
+        ✏️ Modifier le dernier relevé
+    </button>
+
+    <p id="message"></p>
+
+</div>
     app.jsscript>
 
 </body>
