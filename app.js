@@ -7,19 +7,18 @@ vehicule.value =
 localStorage.getItem("vehicule")
 || "413";
 
-vehicule.addEventListener(
-    "change",
-    chargerDernierReleve
-);
-
-chargerDernierReleve();
+vehicule.addEventListener("change", () => {
 
     localStorage.setItem(
         "vehicule",
         vehicule.value
     );
 
+    chargerDernierReleve();
+
 });
+
+chargerDernierReleve();
 async function chargerDernierReleve() {
     const vehicule =
         document.getElementById("vehicule").value;
