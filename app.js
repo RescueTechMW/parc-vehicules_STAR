@@ -1,4 +1,4 @@
-console.log("APP VERSION 18-08-2026 14h25");
+console.log("APP VERSION 18-08-2026 14h30");
 
 const vehicule =
 document.getElementById("vehicule");
@@ -7,7 +7,10 @@ vehicule.value =
 localStorage.getItem("vehicule")
 || "413";
 
-vehicule.addEventListener("change", () => {
+vehicule.addEventListener(
+    "change",
+    chargerDernierReleve
+);
 
     localStorage.setItem(
         "vehicule",
@@ -15,7 +18,14 @@ vehicule.addEventListener("change", () => {
     );
 
 });
+async function chargerDernierReleve() {
 
+    const vehicule =
+        document.getElementById(
+            "vehicule"
+        ).value;
+
+}
 async function enregistrer() {
 
     const vehicule =
