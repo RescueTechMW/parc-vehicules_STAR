@@ -12,6 +12,8 @@ vehicule.addEventListener(
     chargerDernierReleve
 );
 
+chargerDernierReleve();
+
     localStorage.setItem(
         "vehicule",
         vehicule.value
@@ -19,12 +21,34 @@ vehicule.addEventListener(
 
 });
 async function chargerDernierReleve() {
-
     const vehicule =
-        document.getElementById(
-            "vehicule"
-        ).value;
+        document.getElementById("vehicule").value;
 
+    const response = await fetch(
+        URL_APPS_SCRIPT + "?vehicule=" + vehicule
+    );
+
+    const data = await response.json();
+
+    if(data){
+
+        document.getElementById(
+            "dernierVehicule"
+        ).innerHTML = data.vehicule;
+
+        document.getElementById(
+            "dernierKm"
+        ).innerHTML =
+        Number(data.compteur)
+        .toLocaleString("fr-CH")
+        + " km";
+
+        document.getElementById(
+            "derniereDate"
+        ).innerHTML =
+        new Date(data.date)
+        .toLocaleDateString("fr-CH");
+    }
 }
 async function enregistrer() {
 
