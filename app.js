@@ -1,4 +1,4 @@
-console.log("APP VERSION 18-08-2026 14h15");
+console.log("APP VERSION 18-08-2026 14h25");
 
 const vehicule =
 document.getElementById("vehicule");
