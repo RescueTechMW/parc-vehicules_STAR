@@ -56,6 +56,24 @@ async function enregistrer() {
             await response.json();
 
         if(resultat.success){
+   const vehiculeChoisi =
+document.getElementById("vehicule").value;
+
+document.getElementById(
+    "dernierVehicule"
+).innerHTML =
+vehiculeChoisi;
+
+document.getElementById(
+    "dernierKm"
+).innerHTML =
+Number(compteur).toLocaleString("fr-CH")
++ " km";
+
+document.getElementById(
+    "derniereDate"
+).innerHTML =
+new Date().toLocaleDateString("fr-CH");         
 
             document.getElementById(
                 "message"
@@ -88,20 +106,4 @@ function modifierDernier(){
     ).innerHTML =
     "✏️ Modification possible";
 }
-const vehiculeChoisi =
-document.getElementById("vehicule").value;
 
-document.getElementById(
-    "dernierVehicule"
-).innerHTML =
-vehiculeChoisi;
-document.getElementById(
-    "dernierKm"
-).innerHTML =
-Number(compteur).toLocaleString("fr-CH")
-+ " km";
-
-document.getElementById(
-    "derniereDate"
-).innerHTML =
-new Date().toLocaleDateString("fr-CH");
