@@ -1,4 +1,4 @@
-console.log("APP VERSION 18-08-2026 14h30");
+console.log("APP VERSION 21-08-2026 15h10");
 
 const vehicule =
 document.getElementById("vehicule");
@@ -20,20 +20,28 @@ vehicule.addEventListener("change", () => {
 
 chargerDernierReleve();
 async function chargerDernierReleve() {
-    const vehicule =
+
+    const vehiculeChoisi =
         document.getElementById("vehicule").value;
 
-    const response = await fetch(
-        URL_APPS_SCRIPT + "?vehicule=" + vehicule
-    );
+    const response =
+        await fetch(
+            URL_APPS_SCRIPT +
+            "?vehicule=" +
+            vehiculeChoisi
+        );
 
-    const data = await response.json();
+    const data =
+        await response.json();
+
+    console.log(data);
 
     if(data){
 
         document.getElementById(
             "dernierVehicule"
-        ).innerHTML = data.vehicule;
+        ).innerHTML =
+        data.vehicule;
 
         document.getElementById(
             "dernierKm"
