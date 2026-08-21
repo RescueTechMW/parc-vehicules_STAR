@@ -112,3 +112,35 @@ button{
     margin-top:20px;
     font-weight:600;
 }
+.dashboard{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.card{
+    flex:1;
+    background:#003A8C;
+    color:white;
+    border-radius:20px;
+    text-align:center;
+    padding:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#003A8C;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
