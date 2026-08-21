@@ -1,5 +1,6 @@
-console.log("APP VERSION 21-08-2026 15h15");
+console.log("APP VERSION 21-08-2026 15h20");
 
+let dernierCompteur = 0;
 const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
 
@@ -36,7 +37,28 @@ async function chargerDernierReleve() {
 
     const data =
         await response.json();
+    
+   if(data){
 
+    dernierCompteur =
+    Number(data.compteur || 0);
+
+    document.getElementById(
+        "dernierVehicule"
+    ).innerHTML = data.vehicule;
+
+    document.getElementById(
+        "dernierKm"
+    ).innerHTML =
+    dernierCompteur.toLocaleString("fr-CH")
+    + " km";
+
+    document.getElementById(
+        "derniereDate"
+    ).innerHTML =
+    new Date(data.date)
+    .toLocaleDateString("fr-CH");
+}
     console.log(data);
 
     if(data){
@@ -67,6 +89,15 @@ async function enregistrer() {
 
     const compteur =
         document.getElementById("kilometres").value;
+    if(Number(compteur) <= dernierCompteur){
+
+    document.getElementById(
+        "message"
+    ).innerHTML =
+    "⚠️ Le kilométrage doit être supérieur au dernier relevé.";
+
+    return;
+}
 
     const aujourdHui =
         new Date();
