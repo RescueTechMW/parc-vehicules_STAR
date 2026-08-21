@@ -26,20 +26,69 @@ async function chargerDashboard() {
     const data =
         await response.json();
 
-   
+    const container =
+        document.getElementById(
+            "vehiculesContainer"
+        );
+
+    container.innerHTML = "";
+
     let nbOk = 0;
 
     vehicules.forEach(v => {
 
-        console.log(v);
-console.log(data);
+        const ligne =
+            data.find(
+                item =>
+                item[2].toString() === v.toString()
+            );
 
-    const ligne =
-    data.find(
-        item =>
-        item[2].toString() === v.toString()
-    );
+        if(ligne){
 
+            nbOk++;
+
+            const date =
+                new Date(ligne[4])
+                .toLocaleDateString("fr-CH");
+
+            container.innerHTML += `
+            <div class="vehicule-card card-ok"
+                 onclick="ouvrirHistorique('${v}')">
+
+                <div class="card-header">
+                    <span>${v}</span>
+                    <span>✅</span>
+                </div>
+
+                <div class="card-km">
+                    ${Number(ligne[3]).toLocaleString("fr-CH")} km
+                </div>
+
+                <div class="card-date">
+                    ${date}
+                </div>
+
+            </div>
+            `;
+
+        } else {
+
+            container.innerHTML += `
+            <div class="vehicule-card card-ko"
+                 onclick="ouvrirHistorique('${v}')">
+
+                <div class="card-header">
+                    <span>${v}</span>
+                    <span>❌</span>
+                </div>
+
+                <div class="card-km">
+                    Aucun relevé
+                </div>
+
+            </div>
+            `;
+        }
 
     });
 
@@ -53,5 +102,13 @@ console.log(data);
     vehicules.length - nbOk;
 
 }
-
 chargerDashboard();
+function ouvrirHistorique(vehicule){
+
+    alert(
+        "Historique du véhicule " +
+        vehicule +
+        " (à développer)"
+    );
+
+}
