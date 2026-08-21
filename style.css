@@ -189,5 +189,24 @@ td{
     font-size:2.5rem;
     font-weight:700;
     color:#003A8C;
-    margin-top:10px;
+    text-align:center;
+}
+
+.last-label{
+    text-align:center;
+    color:#555;
+    font-size:14px;
+}
+
+h1{
+    text-align:center;
+    color:#003A8C;
+    margin-bottom:25px;
+}
+
+#logo{
+    display:block;
+    width:220px;
+    margin:auto;
+    margin-bottom:20px;
 }
