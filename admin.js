@@ -1,3 +1,5 @@
+console.log("APP VERSION 21-08-2026 15h30");
+
 const vehicules = [
     "413",
     "414",
