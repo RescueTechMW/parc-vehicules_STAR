@@ -216,3 +216,20 @@ h1{
     border:none;
     border-radius:999px;
 }
+.btn-factures{
+    width:100%;
+    padding:16px;
+    margin-top:20px;
+    background:#f2f5fa;
+    color:#003A8C;
+    border:2px solid #d9dfe8;
+    border-radius:999px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.btn-factures:hover{
+    background:#e8eef7;
+}
