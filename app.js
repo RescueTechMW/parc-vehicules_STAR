@@ -1,4 +1,7 @@
-console.log("APP VERSION 21-08-2026 15h10");
+console.log("APP VERSION 21-08-2026 15h15");
+
+const URL_APPS_SCRIPT =
+"https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
 
 const vehicule =
 document.getElementById("vehicule");
