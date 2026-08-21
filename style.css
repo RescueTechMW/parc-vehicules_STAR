@@ -233,3 +233,40 @@ h1{
 .btn-factures:hover{
     background:#e8eef7;
 }
+
+.vehicule-card{
+    border-radius:20px;
+    padding:15px;
+    margin-bottom:12px;
+    cursor:pointer;
+}
+
+.card-ok{
+    background:#eaf8ee;
+    border-left:6px solid #28a745;
+}
+
+.card-ko{
+    background:#fff1f1;
+    border-left:6px solid #dc3545;
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    font-weight:700;
+    font-size:18px;
+}
+
+.card-km{
+    margin-top:10px;
+    font-size:22px;
+    color:#003A8C;
+    font-weight:700;
+}
+
+.card-date{
+    margin-top:5px;
+    color:#777;
+    font-size:14px;
+}
