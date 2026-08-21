@@ -37,11 +37,15 @@ async function chargerDashboard() {
 
     vehicules.forEach(v => {
 
-        const ligne =
-            data.find(
-                item =>
-                String(item[2]) === String(v)
-            );
+        console.log(v);
+console.log(data);
+
+    const ligne =
+    data.find(
+        item =>
+        item[2].toString() === v.toString()
+    );
+
 
         if(ligne){
 
