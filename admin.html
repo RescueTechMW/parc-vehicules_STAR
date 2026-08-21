@@ -17,30 +17,18 @@
 
 <img src="images/logo-star.png" id="logo" alt="STAR Ambulances">
 
-    <button
-onclick="location.href='index.html'"
-class="btn-save">
 
-Retour à la saisie
+    <h1>Administration 🚑</h1>
 
-</button>
-
-    <h1>🚑 Administration</h1>
-
-  <div class="dashboard">
-
-    <div class="card blue-card">
-        <h2 id="nbOk">0</h2>
-        <p>Véhicule Saisis</p>
+    <div class="last-km">
+        <div class="last-label">Véhicules saisis</div>
+        <div id="nbOk" class="last-value">0</div>
     </div>
 
-    <div class="card red-card">
-        <h2 id="nbManquant">0</h2>
-        <p>Véhicule Manquants</p>
+    <div class="last-km">
+        <div class="last-label">Véhicules manquants</div>
+        <div id="nbManquant" class="last-value">0</div>
     </div>
-
-</div>
-
 
     <table id="tableau">
 
@@ -53,13 +41,17 @@ Retour à la saisie
         </thead>
 
         <tbody>
-
         </tbody>
 
     </table>
 
-</div>
+    <button
+        class="btn-save"
+        onclick="location.href='index.html'">
+        Retour à la saisie
+    </button>
 
+</div>
 
 </body>
 
