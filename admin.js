@@ -1,4 +1,4 @@
-console.log("ADMIN VERSION 21-08-2026 16h47");
+console.log("ADMIN VERSION 21-08-2026 17h07");
 
 const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
