@@ -51,23 +51,29 @@ console.log(data);
 
             nbOk++;
 
-            tbody.innerHTML += `
-            <tr>
-                <td>${v}</td>
-                <td>${Number(ligne[3]).toLocaleString("fr-CH")}</td>
-                <td>✅</td>
-            </tr>
-            `;
+           const date =
+new Date(ligne[4])
+.toLocaleDateString("fr-CH");
+
+tbody.innerHTML += `
+<tr>
+    <td>${v}</td>
+    <td>${Number(ligne[3]).toLocaleString("fr-CH")}</td>
+    <td>${date}</td>
+    <td>✅</td>
+</tr>
+`;
 
         } else {
 
-            tbody.innerHTML += `
-            <tr>
-                <td>${v}</td>
-                <td>-</td>
-                <td>❌</td>
-            </tr>
-            `;
+          <tbody.innerHTML += `
+<tr>
+    <td>${v}</td>
+    <td>-</td>
+    <td>-</td>
+    <td>❌</td>
+</tr>
+`;
 
         }
 
