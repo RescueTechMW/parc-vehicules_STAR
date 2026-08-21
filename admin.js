@@ -26,13 +26,7 @@ async function chargerDashboard() {
     const data =
         await response.json();
 
-    const tbody =
-        document.querySelector(
-            "#tableau tbody"
-        );
-
-    tbody.innerHTML = "";
-
+   
     let nbOk = 0;
 
     vehicules.forEach(v => {
@@ -46,36 +40,6 @@ console.log(data);
         item[2].toString() === v.toString()
     );
 
-
-        if(ligne){
-
-            nbOk++;
-
-           const date =
-new Date(ligne[4])
-.toLocaleDateString("fr-CH");
-
-tbody.innerHTML += `
-<tr>
-    <td>${v}</td>
-    <td>${Number(ligne[3]).toLocaleString("fr-CH")}</td>
-    <td>${date}</td>
-    <td>✅</td>
-</tr>
-`;
-
-        } else {
-
-          tbody.innerHTML += `
-<tr>
-    <td>${v}</td>
-    <td>-</td>
-    <td>-</td>
-    <td>❌</td>
-</tr>
-`;
-
-        }
 
     });
 
