@@ -1,4 +1,4 @@
-console.log("APP VERSION 22-08-2026 10h20");
+console.log("APP VERSION 22-08-2026 15h50");
 
 const vehicules = {
     "413": "VD 452753",
@@ -105,5 +105,63 @@ async function enregistrerFacture(){
         );
 
     }
+
+}
+chargerListes();
+
+async function chargerListes(){
+
+    const repFournisseurs =
+    await fetch(
+        URL_APPS_SCRIPT +
+        "?action=fournisseurs"
+    );
+
+    const fournisseurs =
+    await repFournisseurs.json();
+
+    const selectFournisseur =
+    document.getElementById(
+        "fournisseur"
+    );
+
+    selectFournisseur.innerHTML =
+    "<option></option>";
+
+    fournisseurs
+    .slice(1)
+    .forEach(f => {
+
+        selectFournisseur.innerHTML += `
+        <option>
+            ${f[0]}
+        </option>`;
+
+    });
+
+    const repDetails =
+    await fetch(
+        URL_APPS_SCRIPT +
+        "?action=details"
+    );
+
+    const details =
+    await repDetails.json();
+
+    const selectDetail =
+    document.getElementById(
+        "detail"
+    );
+
+    details
+    .slice(1)
+    .forEach(d => {
+
+        selectDetail.innerHTML += `
+        <option>
+            ${d[0]}
+        </option>`;
+
+    });
 
 }
