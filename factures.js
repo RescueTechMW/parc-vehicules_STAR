@@ -49,3 +49,61 @@ selectPlaque.addEventListener(
 
     }
 );
+const URL_APPS_SCRIPT =
+"https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
+
+async function enregistrerFacture(){
+
+    const vehicule =
+    document.getElementById("vehicule").value;
+
+    const plaque =
+    document.getElementById("plaque").value;
+
+    const detail =
+    document.getElementById("detail").value;
+
+    const cout =
+    document.getElementById("cout").value;
+
+    const fournisseur =
+    document.getElementById("fournisseur").value;
+
+    const remarque =
+    document.getElementById("remarque").value;
+
+    const numeroFacture =
+    document.getElementById("facture").value;
+
+    const response =
+    await fetch(
+        URL_APPS_SCRIPT,
+        {
+            method:"POST",
+            body:JSON.stringify({
+
+                type:"facture",
+                vehicule,
+                plaque,
+                detail,
+                cout,
+                fournisseur,
+                remarque,
+                numeroFacture
+
+            })
+        }
+    );
+
+    const resultat =
+    await response.json();
+
+    if(resultat.success){
+
+        alert(
+            "✅ Facture enregistrée"
+        );
+
+    }
+
+}
