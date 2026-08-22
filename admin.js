@@ -1,4 +1,4 @@
-console.log("ADMIN VERSION 21-08-2026 17h27");
+console.log("ADMIN VERSION 22-08-2026 09h55");
 
 const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
@@ -34,14 +34,26 @@ async function chargerDashboard() {
     container.innerHTML = "";
 
     let nbOk = 0;
+const maintenant =
+new Date();
 
+const moisActuel =
+maintenant.toLocaleString(
+    "fr-FR",
+    { month: "long" }
+);
+
+const anneeActuelle =
+maintenant.getFullYear();
     vehicules.forEach(v => {
 
-        const ligne =
-            data.find(
-                item =>
-                item[2].toString() === v.toString()
-            );
+      const ligne =
+    data.find(
+        item =>
+        item[0] == anneeActuelle &&
+        item[1] == moisActuel &&
+        item[2].toString() === v.toString()
+    );
         console.log("vehicule recherché :", v);
 console.log("ligne trouvée :", ligne);
 
