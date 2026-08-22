@@ -1,3 +1,5 @@
+console.log("APP VERSION 22-08-2026 10h05");
+
 const vehicules = {
 
     "413":"VD 452753",
