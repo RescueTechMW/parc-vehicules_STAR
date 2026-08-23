@@ -1,4 +1,4 @@
-console.log("APP VERSION 23-08-2026 12h12");
+console.log("APP VERSION 23-08-2026 12h21");
 
 const vehicules = {
     "413": "VD 452753",
@@ -151,7 +151,7 @@ if(nouveauFournisseur.trim() !== ""){
     await response.json();
 
     if(resultat.success){
-
+document.getElementById("dateFacture").value = "";
 document.getElementById("vehicule").value = "";
 document.getElementById("plaque").value = "";
 document.getElementById("detail").value = "";
