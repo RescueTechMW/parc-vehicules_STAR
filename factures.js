@@ -66,8 +66,20 @@ async function enregistrerFacture(){
     const cout =
     document.getElementById("cout").value;
 
-    const fournisseur =
-    document.getElementById("fournisseur").value;
+    let fournisseur =
+document.getElementById(
+    "fournisseur"
+).value;
+
+const nouveauFournisseur =
+document.getElementById(
+    "nouveauFournisseur"
+).value;
+
+if(nouveauFournisseur.trim() !== ""){
+    fournisseur =
+    nouveauFournisseur;
+}
 
     const remarque =
     document.getElementById("remarque").value;
