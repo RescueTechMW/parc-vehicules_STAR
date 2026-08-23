@@ -1,4 +1,4 @@
-console.log("APP VERSION 23-08-2026 12h10");
+console.log("APP VERSION 23-08-2026 12h12");
 
 const vehicules = {
     "413": "VD 452753",
@@ -230,10 +230,12 @@ async function chargerListes(){
     const details =
     await repDetails.json();
 
-    const selectDetail =
-    document.getElementById(
-        "detail"
-    );
+   const selectDetail =
+document.getElementById("detail");
+
+selectDetail.innerHTML =
+'<option value="">Choisir...</option>';
+    
 
     details
     .slice(1)
