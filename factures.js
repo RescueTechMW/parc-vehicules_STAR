@@ -1,4 +1,4 @@
-console.log("APP VERSION 23-08-2026 11h30");
+console.log("APP VERSION 23-08-2026 11h35");
 
 const vehicules = {
     "413": "VD 452753",
@@ -125,6 +125,25 @@ document.getElementById(
 ).innerHTML =
 "✅ Facture enregistrée avec succès";
 
+setTimeout(() => {
+
+    document.getElementById(
+        "messageFacture"
+    ).style.opacity = "0";
+
+}, 4000);
+
+setTimeout(() => {
+
+    document.getElementById(
+        "messageFacture"
+    ).innerHTML = "";
+
+    document.getElementById(
+        "messageFacture"
+    ).style.opacity = "1";
+
+}, 5000);
        
 
     }
