@@ -1,4 +1,4 @@
-console.log("APP VERSION 23-08-2026 11h52");
+console.log("APP VERSION 23-08-2026 12h03");
 
 const vehicules = {
     "413": "VD 452753",
@@ -62,8 +62,45 @@ async function enregistrerFacture(){
     const plaque =
     document.getElementById("plaque").value;
 
-    const detail =
-    document.getElementById("detail").value;
+   const detailListe =
+document.getElementById(
+    "detail"
+).value;
+
+const detailLibre =
+document.getElementById(
+    "detailLibre"
+).value.trim();
+
+let detailFinal = "";
+
+if(
+    detailListe !== "" &&
+    detailLibre !== ""
+){
+
+    detailFinal =
+    detailListe +
+    " - " +
+    detailLibre;
+
+}
+else if(
+    detailListe !== ""
+){
+
+    detailFinal =
+    detailListe;
+
+}
+else if(
+    detailLibre !== ""
+){
+
+    detailFinal =
+    detailLibre;
+
+}
 
     const cout =
     document.getElementById("cout").value;
