@@ -53,6 +53,8 @@ const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
 
 async function enregistrerFacture(){
+    const dateFacture =
+    document.getElementById("dateFacture").value;
 
     const vehicule =
     document.getElementById("vehicule").value;
@@ -111,6 +113,7 @@ if(nouveauFournisseur.trim() !== ""){
     await response.json();
 
     if(resultat.success){
+
 document.getElementById("vehicule").value = "";
 document.getElementById("plaque").value = "";
 document.getElementById("detail").value = "";
