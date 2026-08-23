@@ -264,6 +264,12 @@ h1{
     color:#003A8C;
     font-weight:700;
 }
+#messageFacture{
+    text-align:center;
+    color:#28a745;
+    font-weight:600;
+    margin-top:15px;
+}
 
 .card-date{
     margin-top:5px;
