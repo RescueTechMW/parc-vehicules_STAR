@@ -131,18 +131,19 @@ if(nouveauFournisseur.trim() !== ""){
         URL_APPS_SCRIPT,
         {
             method:"POST",
-            body:JSON.stringify({
+            body: JSON.stringify({
 
-                type:"facture",
-                vehicule,
-                plaque,
-                detail,
-                cout,
-                fournisseur,
-                remarque,
-                numeroFacture
+    type:"facture",
+    dateFacture,
+    vehicule,
+    plaque,
+    detail: detailFinal,
+    cout,
+    fournisseur,
+    remarque,
+    numeroFacture
 
-            })
+})
         }
     );
 
