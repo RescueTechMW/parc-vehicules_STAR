@@ -1,4 +1,4 @@
-console.log("APP VERSION 22-08-2026 15h50");
+console.log("APP VERSION 23-08-2026 11h20");
 
 const vehicules = {
     "413": "VD 452753",
@@ -99,6 +99,19 @@ async function enregistrerFacture(){
     await response.json();
 
     if(resultat.success){
+document.getElementById("vehicule").value = "";
+document.getElementById("plaque").value = "";
+document.getElementById("detail").value = "";
+document.getElementById("detailLibre").value = "";
+document.getElementById("cout").value = "";
+document.getElementById("fournisseur").value = "";
+document.getElementById("nouveauFournisseur").value = "";
+document.getElementById("facture").value = "";
+document.getElementById("remarque").value = "";
+document.getElementById(
+    "messageFacture"
+).innerHTML =
+"✅ Facture enregistrée avec succès";
 
         alert(
             "✅ Facture enregistrée"
