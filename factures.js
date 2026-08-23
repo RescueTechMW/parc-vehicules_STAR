@@ -113,9 +113,7 @@ document.getElementById(
 ).innerHTML =
 "✅ Facture enregistrée avec succès";
 
-        alert(
-            "✅ Facture enregistrée"
-        );
+       
 
     }
 
