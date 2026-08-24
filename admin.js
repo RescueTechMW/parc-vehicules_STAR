@@ -184,3 +184,19 @@ function fermerModal(){
 
 }
 chargerDashboard();
+
+window.onclick = function(event){
+
+    const modal =
+    document.getElementById(
+        "modalVehicule"
+    );
+
+    if(event.target == modal){
+
+        fermerModal();
+
+    }
+
+}
+
