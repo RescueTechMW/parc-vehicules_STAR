@@ -19,10 +19,13 @@ async function chargerHistorique(){
 
     container.innerHTML = "";
 
-    data
-    .slice(1)
-    .reverse()
-    .forEach(f => {
+   const factures = data
+  .slice(1)
+  .sort((a, b) => {
+      return new Date(b[0]) - new Date(a[0]);
+  });
+
+factures.forEach(f => {
 
         const date =
         new Date(f[0])
