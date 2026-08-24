@@ -136,7 +136,7 @@ async function ouvrirHistorique(vehicule){
 
     contenu.innerHTML =
     `<h2>🚑 Véhicule ${vehicule}</h2>
-    <p>Chargement...</p>
+    
     `;
 
   const ordreMois = {
