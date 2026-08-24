@@ -134,39 +134,38 @@ async function ouvrirHistorique(vehicule){
         "contenuModal"
     );
 
- contenu.innerHTML =
-`<h2>🚑 Véhicule ${vehicule}</h2>`;
+    contenu.innerHTML =
+    `<h2>🚑 Véhicule ${vehicule}</h2>`;
 
-data.reverse().forEach(ligne => {
+    data.reverse().forEach(ligne => {
+
+        contenu.innerHTML += `
+        <div class="last-km">
+
+            <div class="last-label">
+                ${ligne[1]} ${ligne[0]}
+            </div>
+
+            <div class="last-value">
+                ${Number(ligne[3]).toLocaleString("fr-CH")} km
+            </div>
+
+        </div>
+        `;
+
+    });
 
     contenu.innerHTML += `
-    <div class="last-km">
 
-        <div class="last-label">
-            ${ligne[1]} ${ligne[0]}
-        </div>
+    <button
+        class="btn-factures"
+        onclick="fermerModal()">
 
-        <div class="last-value">
-            ${Number(ligne[3]).toLocaleString("fr-CH")} km
-        </div>
+        Fermer
 
-    </div>
+    </button>
+
     `;
-
-});
-
-contenu.innerHTML += `
-
-<button
-    class="btn-factures"
-    onclick="fermerModal()">
-
-    Fermer
-
-</button>
-
-`;
-    });
 
     document.getElementById(
         "modalVehicule"
@@ -174,7 +173,6 @@ contenu.innerHTML += `
     "block";
 
 }
-
 function fermerModal(){
 
     document.getElementById(
