@@ -1,4 +1,4 @@
-console.log("ADMIN VERSION 24-08-2026 16h45");
+console.log("ADMIN VERSION 24-08-2026 16h50");
 
 const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
@@ -134,25 +134,38 @@ async function ouvrirHistorique(vehicule){
         "contenuModal"
     );
 
-    contenu.innerHTML =
-    `<h2>🚑 Véhicule ${vehicule}</h2>`;
+ contenu.innerHTML =
+`<h2>🚑 Véhicule ${vehicule}</h2>`;
 
-    data.reverse().forEach(ligne => {
+data.reverse().forEach(ligne => {
 
-        contenu.innerHTML += `
-        <div class="last-km">
+    contenu.innerHTML += `
+    <div class="last-km">
 
-            <div class="last-label">
-                ${ligne[1]} ${ligne[0]}
-            </div>
-
-            <div class="last-value">
-                ${Number(ligne[3]).toLocaleString("fr-CH")} km
-            </div>
-
+        <div class="last-label">
+            ${ligne[1]} ${ligne[0]}
         </div>
-        `;
 
+        <div class="last-value">
+            ${Number(ligne[3]).toLocaleString("fr-CH")} km
+        </div>
+
+    </div>
+    `;
+
+});
+
+contenu.innerHTML += `
+
+<button
+    class="btn-factures"
+    onclick="fermerModal()">
+
+    Fermer
+
+</button>
+
+`;
     });
 
     document.getElementById(
