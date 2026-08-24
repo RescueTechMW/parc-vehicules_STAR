@@ -2,7 +2,10 @@ const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
 
 async function chargerHistorique(){
-
+console.log(
+    URL_APPS_SCRIPT +
+    "?action=historiqueFactures"
+);
     const response =
     await fetch(
         URL_APPS_SCRIPT +
