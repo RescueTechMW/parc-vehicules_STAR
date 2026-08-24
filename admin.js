@@ -137,14 +137,47 @@ async function ouvrirHistorique(vehicule){
     contenu.innerHTML =
     `<h2>🚑 Véhicule ${vehicule}</h2>`;
 
-   const historique =
+  const ordreMois = {
+    "janvier":1,
+    "février":2,
+    "mars":3,
+    "avril":4,
+    "mai":5,
+    "juin":6,
+    "juillet":7,
+    "août":8,
+    "septembre":9,
+    "octobre":10,
+    "novembre":11,
+    "décembre":12
+};
+
+const historique =
 data.sort((a,b) => {
 
-    return a[0] - b[0];
+    const dateA =
+    a[0] * 100 +
+    ordreMois[a[1]];
+
+    const dateB =
+    b[0] * 100 +
+    ordreMois[b[1]];
+
+    return dateA - dateB;
 
 });
 
-for(let i = historique.length -1; i > 0; i--){
+const debut =
+Math.max(
+    historique.length - 6,
+    1
+);
+
+for(
+    let i = historique.length - 1;
+    i >= debut;
+    i--
+){
 
     const compteurActuel =
     Number(historique[i][3]);
