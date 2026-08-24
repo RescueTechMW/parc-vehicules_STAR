@@ -1,4 +1,4 @@
-console.log("ADMIN VERSION 24-08-2026 17h25");
+console.log("ADMIN VERSION 24-08-2026 17h30");
 
 const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
@@ -135,7 +135,9 @@ async function ouvrirHistorique(vehicule){
     );
 
     contenu.innerHTML =
-    `<h2>🚑 Véhicule ${vehicule}</h2>`;
+    `<h2>🚑 Véhicule ${vehicule}</h2>
+    <p>Chargement...</p>
+    `;
 
   const ordreMois = {
     "janvier":1,
