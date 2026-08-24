@@ -116,13 +116,57 @@ console.log("ligne trouvée :", ligne);
     vehicules.length - nbOk;
 
 }
-chargerDashboard();
-function ouvrirHistorique(vehicule){
+async function ouvrirHistorique(vehicule){
 
-    alert(
-        "Historique du véhicule " +
-        vehicule +
-        " (à développer)"
+    const response =
+    await fetch(
+        URL_APPS_SCRIPT +
+        "?action=historiqueVehicule" +
+        "&vehicule=" +
+        vehicule
     );
+
+    const data =
+    await response.json();
+
+    const contenu =
+    document.getElementById(
+        "contenuModal"
+    );
+
+    contenu.innerHTML =
+    `<h2>🚑 Véhicule ${vehicule}</h2>`;
+
+    data.reverse().forEach(ligne => {
+
+        contenu.innerHTML += `
+        <div class="last-km">
+
+            <div class="last-label">
+                ${ligne[1]} ${ligne[0]}
+            </div>
+
+            <div class="last-value">
+                ${Number(ligne[3]).toLocaleString("fr-CH")} km
+            </div>
+
+        </div>
+        `;
+
+    });
+
+    document.getElementById(
+        "modalVehicule"
+    ).style.display =
+    "block";
+
+}
+
+function fermerModal(){
+
+    document.getElementById(
+        "modalVehicule"
+    ).style.display =
+    "none";
 
 }
