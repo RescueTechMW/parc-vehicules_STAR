@@ -1,4 +1,4 @@
-console.log("ADMIN VERSION 24-08-2026 16h55");
+console.log("ADMIN VERSION 24-08-2026 17h10");
 
 const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
@@ -137,23 +137,39 @@ async function ouvrirHistorique(vehicule){
     contenu.innerHTML =
     `<h2>🚑 Véhicule ${vehicule}</h2>`;
 
-    data.reverse().forEach(ligne => {
+   const historique =
+data.sort((a,b) => {
 
-        contenu.innerHTML += `
-        <div class="last-km">
+    return a[0] - b[0];
 
-            <div class="last-label">
-                ${ligne[1]} ${ligne[0]}
-            </div>
+});
 
-            <div class="last-value">
-                ${Number(ligne[3]).toLocaleString("fr-CH")} km
-            </div>
+for(let i = historique.length -1; i > 0; i--){
 
+    const compteurActuel =
+    Number(historique[i][3]);
+
+    const compteurPrecedent =
+    Number(historique[i-1][3]);
+
+    const kmMois =
+    compteurActuel -
+    compteurPrecedent;
+
+    contenu.innerHTML += `
+    <div class="last-km">
+
+        <div class="last-label">
+            ${historique[i][1]} ${historique[i][0]}
         </div>
-        `;
 
-    });
+        <div class="last-value">
+            ${kmMois.toLocaleString("fr-CH")} km
+        </div>
+
+    </div>
+    `;
+}
 
     contenu.innerHTML += `
 
