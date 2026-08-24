@@ -170,3 +170,4 @@ function fermerModal(){
     "none";
 
 }
+chargerDashboard();
