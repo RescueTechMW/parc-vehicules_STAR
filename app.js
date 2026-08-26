@@ -1,4 +1,4 @@
-console.log("APP VERSION 26-08-2026 10h40");
+console.log("APP VERSION 26-08-2026 11h00");
 
 let dernierCompteur = 0;
 const URL_APPS_SCRIPT =
@@ -180,14 +180,44 @@ new Date().toLocaleDateString("fr-CH");
 }
 
 function modifierDernier(){
+if(
+    !localStorage.getItem(
+        "dateDerniereSaisie"
+    )
+){
 
+    document.getElementById(
+        "message"
+    ).innerHTML =
+    "❌ Aucun relevé récent à modifier.";
+
+    return;
+}
     const dateSaisie =
     new Date(
         localStorage.getItem(
             "dateDerniereSaisie"
         )
     );
+const dernierVehicule =
+localStorage.getItem(
+    "dernierVehiculeModifiable"
+);
 
+const vehiculeActuel =
+document.getElementById(
+    "vehicule"
+).value;
+
+if(vehiculeActuel !== dernierVehicule){
+
+    document.getElementById(
+        "message"
+    ).innerHTML =
+    "❌ Seul le dernier véhicule saisi peut être modifié.";
+
+    return;
+}
     const maintenant =
     new Date();
 
