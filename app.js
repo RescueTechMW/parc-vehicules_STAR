@@ -1,4 +1,4 @@
-console.log("APP VERSION 21-08-2026 15h30");
+console.log("APP VERSION 26-08-2026 10h40");
 
 let dernierCompteur = 0;
 const URL_APPS_SCRIPT =
@@ -131,6 +131,15 @@ async function enregistrer() {
             await response.json();
 
         if(resultat.success){
+            localStorage.setItem(
+    "dateDerniereSaisie",
+    new Date().toISOString()
+);
+
+localStorage.setItem(
+    "dernierVehiculeModifiable",
+    vehicule.value
+);
    const vehiculeChoisi =
 document.getElementById("vehicule").value;
 
@@ -172,6 +181,33 @@ new Date().toLocaleDateString("fr-CH");
 
 function modifierDernier(){
 
+    const dateSaisie =
+    new Date(
+        localStorage.getItem(
+            "dateDerniereSaisie"
+        )
+    );
+
+    const maintenant =
+    new Date();
+
+    const difference =
+    (maintenant - dateSaisie)
+    /
+    1000
+    /
+    60;
+
+    if(difference > 10){
+
+        document.getElementById(
+            "message"
+        ).innerHTML =
+        "❌ Modification expirée.";
+
+        return;
+    }
+
     document.getElementById(
         "kilometres"
     ).focus();
@@ -180,5 +216,7 @@ function modifierDernier(){
         "message"
     ).innerHTML =
     "✏️ Modification possible";
+
 }
+`
 
