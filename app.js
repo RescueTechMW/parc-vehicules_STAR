@@ -1,4 +1,4 @@
-console.log("APP VERSION 28-08-2026 18h45");
+console.log("APP VERSION 28-08-2026 18h50");
 
 let clicsLogo = 0;
 
@@ -6,10 +6,10 @@ document.getElementById("logo").addEventListener("click", () => {
     clicsLogo++;
 
     if (clicsLogo >= 5) {
-        const code = prompt("Code d'accès :");
+        const code = prompt("Code d'accès");
 
         if (code === "STAR2026") {
-            document.getElementById("secretBtn").style.display = "block";
+            window.location.href = "admin.html";
         } else {
             alert("Code incorrect");
         }
