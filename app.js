@@ -1,4 +1,23 @@
-console.log("APP VERSION 26-08-2026 11h00");
+console.log("APP VERSION 28-08-2026 18h45");
+
+let clicsLogo = 0;
+
+document.getElementById("logo").addEventListener("click", () => {
+    clicsLogo++;
+
+    if (clicsLogo >= 5) {
+        const code = prompt("Code d'accès :");
+
+        if (code === "STAR2026") {
+            document.getElementById("secretBtn").style.display = "block";
+        } else {
+            alert("Code incorrect");
+        }
+
+        clicsLogo = 0;
+    }
+});
+
 
 let dernierCompteur = 0;
 const URL_APPS_SCRIPT =
