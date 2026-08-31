@@ -1,4 +1,4 @@
-console.log("ADMIN VERSION 24-08-2026 17h30");
+console.log("ADMIN VERSION 31-08-2026 18h30");
 
 const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
@@ -37,14 +37,25 @@ async function chargerDashboard() {
 const maintenant =
 new Date();
 
+let dateReference =
+new Date();
+
+if(maintenant.getDate() <= 5){
+
+    dateReference.setMonth(
+        dateReference.getMonth() - 1
+    );
+
+}
+
 const moisActuel =
-maintenant.toLocaleString(
+dateReference.toLocaleString(
     "fr-FR",
     { month: "long" }
 );
 
 const anneeActuelle =
-maintenant.getFullYear();
+dateReference.getFullYear();
     vehicules.forEach(v => {
 
       const ligne =
