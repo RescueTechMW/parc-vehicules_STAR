@@ -1,4 +1,4 @@
-console.log("ADMIN VERSION 31-08-2026 18h30");
+console.log("ADMIN VERSION 31-08-2026 20h30");
 
 const URL_APPS_SCRIPT =
 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec";
@@ -37,25 +37,42 @@ async function chargerDashboard() {
 const maintenant =
 new Date();
 
-let dateReference =
-new Date();
+let moisIndex =
+maintenant.getMonth();
 
-if(maintenant.getDate() <= 5){
+let anneeActuelle =
+maintenant.getFullYear();
 
-    dateReference.setMonth(
-        dateReference.getMonth() - 1
-    );
+if(maintenant.getDate() >= 25){
+
+    moisIndex++;
 
 }
 
-const moisActuel =
-dateReference.toLocaleString(
-    "fr-FR",
-    { month: "long" }
-);
+if(moisIndex > 11){
 
-const anneeActuelle =
-dateReference.getFullYear();
+    moisIndex = 0;
+    anneeActuelle++;
+
+}
+
+const nomsMois = [
+    "janvier",
+    "février",
+    "mars",
+    "avril",
+    "mai",
+    "juin",
+    "juillet",
+    "août",
+    "septembre",
+    "octobre",
+    "novembre",
+    "décembre"
+];
+
+const moisActuel =
+nomsMois[moisIndex];
     vehicules.forEach(v => {
 
       const ligne =
