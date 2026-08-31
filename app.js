@@ -1,4 +1,4 @@
-console.log("APP VERSION 28-08-2026 18h50");
+console.log("APP VERSION 28-08-2026 20h10");
 
 let clicsLogo = 0;
 
@@ -118,18 +118,7 @@ async function enregistrer() {
     return;
 }
 
-    const aujourdHui =
-        new Date();
-
-    const mois =
-        aujourdHui.toLocaleString(
-            "fr-FR",
-            { month: "long" }
-        );
-
-    const annee =
-        aujourdHui.getFullYear();
-
+   
     try {
 
         const response =
@@ -137,12 +126,10 @@ async function enregistrer() {
                 "https://script.google.com/macros/s/AKfycbwx9_RWV5PfuLBtjpT0C_VNYQoc604fwTGZhC2Jl0nfYI8debfm6i-Sroka81JCJYdW/exec",
                 {
                     method: "POST",
-                    body: JSON.stringify({
-                        annee,
-                        mois,
-                        vehicule,
-                        compteur
-                    })
+                   body: JSON.stringify({
+    vehicule,
+    compteur
+})
                 }
             );
 
@@ -157,7 +144,7 @@ async function enregistrer() {
 
 localStorage.setItem(
     "dernierVehiculeModifiable",
-    vehicule.value
+    vehicule
 );
    const vehiculeChoisi =
 document.getElementById("vehicule").value;
