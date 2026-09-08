@@ -327,3 +327,13 @@ h1{
     border-top:1px solid #ddd;
     padding-top:10px;
 }
+.factures-details{
+    display:none;
+}
+
+.factures-details.open{
+    display:block;
+    margin-top:15px;
+    border-top:1px solid #d0d0d0;
+    padding-top:10px;
+}
