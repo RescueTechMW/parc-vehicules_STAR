@@ -144,7 +144,22 @@ liste
             </div>
             `;
         });
+const anneeActuelle =
+new Date().getFullYear();
 
+const facturesAnnee =
+liste.filter(
+    f =>
+    new Date(f[0]).getFullYear() ===
+    anneeActuelle
+);
+
+const totalAnnee =
+facturesAnnee.reduce(
+    (somme, f) =>
+    somme + Number(f[6] || 0),
+    0
+);
         container.innerHTML += 
 
         <div class="vehicule-card card-ok">
@@ -153,11 +168,12 @@ liste
 
                 <span>🚑 ${vhc}</span>
 
-              const anneeActuelle =
+const anneeActuelle =
 new Date().getFullYear();
 
 const facturesAnnee =
-liste.filter(f =>
+liste.filter(
+    f =>
     new Date(f[0]).getFullYear() ===
     anneeActuelle
 );
@@ -165,15 +181,28 @@ liste.filter(f =>
 const totalAnnee =
 facturesAnnee.reduce(
     (somme, f) =>
-        somme + Number(f[6] || 0),
+    somme + Number(f[6] || 0),
     0
 );
-<span>
-    ${facturesAnnee.length} facture(s) ${anneeActuelle}
-    <br>
-    CHF ${totalAnnee.toFixed(2)}
-</span>
-            </div>
+
+container.innerHTML += `
+
+<div class="vehicule-card card-ok">
+
+    <div class="card-header">
+
+        <span>🚑 ${vhc}</span>
+
+        <span>
+            ${facturesAnnee.length} facture(s) ${anneeActuelle}
+            <br>
+            CHF ${totalAnnee.toFixed(2)}
+        </span>
+
+    </div>
+
+...
+`;
 
             <div class="preview">
                 ${preview}
