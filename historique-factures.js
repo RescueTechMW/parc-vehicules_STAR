@@ -84,152 +84,112 @@ async function chargerHistorique() {
 
     container.innerHTML = "";
 
-    Object.keys(groupes)
-    .sort()
-    .forEach(vhc => {
+Object.keys(groupes)
+.sort()
+.forEach(vhc => {
 
-        const liste =
-        groupes[vhc];
-        const anneeActuelle =
-new Date().getFullYear();
+    const liste = groupes[vhc];
 
-const totalAnnee =
-liste
-.filter(f =>
-    new Date(f[0]).getFullYear() ===
-    anneeActuelle
-)
-.reduce(
-    (somme, f) =>
-    somme +
-    parseFloat(f[6] || 0),
-    0
-);
+    const anneeActuelle =
+    new Date().getFullYear();
 
+    const facturesAnnee =
+    liste.filter(
+        f =>
+        new Date(f[0]).getFullYear() ===
+        anneeActuelle
+    );
 
-        let preview = "";
+    const totalAnnee =
+    facturesAnnee.reduce(
+        (somme, f) =>
+        somme + Number(f[6] || 0),
+        0
+    );
 
-        liste
-        .slice(0,3)
-        .forEach(f => {
+    let preview = "";
 
-            const date =
-            new Date(f[0])
-            .toLocaleDateString("fr-CH");
+    liste
+    .slice(0,3)
+    .forEach(f => {
 
-            preview += `
-            <div style="margin-bottom:8px;">
-                ${date}<br>
-                ${f[5]}<br>
-                CHF ${f[6]}
-            </div>
-            `;
-        });
+        const date =
+        new Date(f[0])
+        .toLocaleDateString("fr-CH");
 
-       let details = "";
+        preview += `
+        <div style="margin-bottom:8px;">
+            ${date}<br>
+            ${f[5]}<br>
+            CHF ${f[6]}
+        </div>
+        `;
 
-liste
-.slice(3)
-.forEach(f => {
+    });
 
-            const date =
-            new Date(f[0])
-            .toLocaleDateString("fr-CH");
+    let details = "";
 
-            details += `
-            <div style="margin-bottom:10px;">
-                ${date}<br>
-                ${f[5]}<br>
-                CHF ${f[6]}
-            </div>
-            `;
-        });
-const anneeActuelle =
-new Date().getFullYear();
+    liste
+    .slice(3)
+    .forEach(f => {
 
-const facturesAnnee =
-liste.filter(
-    f =>
-    new Date(f[0]).getFullYear() ===
-    anneeActuelle
-);
+        const date =
+        new Date(f[0])
+        .toLocaleDateString("fr-CH");
 
-const totalAnnee =
-facturesAnnee.reduce(
-    (somme, f) =>
-    somme + Number(f[6] || 0),
-    0
-);
-        container.innerHTML += 
+        details += `
+        <div style="margin-bottom:10px;">
+            ${date}<br>
+            ${f[5]}<br>
+            CHF ${f[6]}
+        </div>
+        `;
 
-        <div class="vehicule-card card-ok">
+    });
 
-            <div class="card-header">
+    container.innerHTML += `
 
-                <span>🚑 ${vhc}</span>
+    <div class="vehicule-card card-ok">
 
-const anneeActuelle =
-new Date().getFullYear();
+        <div class="card-header">
 
-const facturesAnnee =
-liste.filter(
-    f =>
-    new Date(f[0]).getFullYear() ===
-    anneeActuelle
-);
+            <span>🚑 ${vhc}</span>
 
-const totalAnnee =
-facturesAnnee.reduce(
-    (somme, f) =>
-    somme + Number(f[6] || 0),
-    0
-);
-
-container.innerHTML += `
-
-<div class="vehicule-card card-ok">
-
-    <div class="card-header">
-
-        <span>🚑 ${vhc}</span>
-
-        <span>
-            ${facturesAnnee.length} facture(s) ${anneeActuelle}
-            <br>
-            CHF ${totalAnnee.toFixed(2)}
-        </span>
-
-    </div>
-
-...
-`;
-
-            <div class="preview">
-                ${preview}
-            </div>
-
-           <button
-    class="btn-factures"
-    onclick="
-    const bloc = this.nextElementSibling;
-    bloc.classList.toggle('open');
-
-    this.innerText =
-    bloc.classList.contains('open')
-    ? 'Masquer'
-    : 'Voir tout';
-    ">
-    Voir tout
-</button>
-
-            <div class="factures-details">
-                ${details}
-            </div>
+            <span>
+                ${facturesAnnee.length} facture(s) ${anneeActuelle}
+                <br>
+                CHF ${totalAnnee.toFixed(2)}
+            </span>
 
         </div>
 
-        `;
-    });
+        <div class="preview">
+            ${preview}
+        </div>
+
+        <button
+            class="btn-factures"
+            onclick="
+            const bloc=this.nextElementSibling;
+            bloc.classList.toggle('open');
+
+            this.innerText =
+            bloc.classList.contains('open')
+            ? 'Masquer'
+            : 'Voir tout';
+            ">
+            Voir tout
+        </button>
+
+        <div class="factures-details">
+            ${details}
+        </div>
+
+    </div>
+
+    `;
+
+});
 
 }
 
