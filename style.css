@@ -304,3 +304,17 @@ h1{
     color:#777;
     font-size:14px;
 }
+#dernieresFactures{
+    margin-bottom:20px;
+}
+
+.factures-details{
+    display:none;
+    margin-top:10px;
+    border-top:1px solid #ddd;
+    padding-top:10px;
+}
+
+.factures-details.open{
+    display:block;
+}
