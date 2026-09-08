@@ -357,3 +357,8 @@ h1{
     font-size:1.05rem;
     color:#111;
 }
+.card-header span:last-child{
+    text-align:right;
+    font-weight:700;
+    color:#003A8C;
+}
