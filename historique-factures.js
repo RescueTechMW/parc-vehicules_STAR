@@ -90,6 +90,22 @@ async function chargerHistorique() {
 
         const liste =
         groupes[vhc];
+        const anneeActuelle =
+new Date().getFullYear();
+
+const totalAnnee =
+liste
+.filter(f =>
+    new Date(f[0]).getFullYear() ===
+    anneeActuelle
+)
+.reduce(
+    (somme, f) =>
+    somme +
+    parseFloat(f[6] || 0),
+    0
+);
+
 
         let preview = "";
 
@@ -110,9 +126,11 @@ async function chargerHistorique() {
             `;
         });
 
-        let details = "";
+       let details = "";
 
-        liste.forEach(f => {
+liste
+.slice(3)
+.forEach(f => {
 
             const date =
             new Date(f[0])
@@ -135,9 +153,11 @@ async function chargerHistorique() {
 
                 <span>🚑 ${vhc}</span>
 
-                <span>
-                    ${liste.length} facture(s)
-                </span>
+               <span>
+    ${liste.length} facture(s)
+    <br>
+    CHF ${totalAnnee.toFixed(2)}
+</span>
 
             </div>
 
@@ -145,13 +165,19 @@ async function chargerHistorique() {
                 ${preview}
             </div>
 
-            <button
-                class="btn-factures"
-                onclick="
-                this.nextElementSibling.classList.toggle('open')
-                ">
-                Voir tout
-            </button>
+           <button
+    class="btn-factures"
+    onclick="
+    const bloc = this.nextElementSibling;
+    bloc.classList.toggle('open');
+
+    this.innerText =
+    bloc.classList.contains('open')
+    ? 'Masquer'
+    : 'Voir tout';
+    ">
+    Voir tout
+</button>
 
             <div class="factures-details">
                 ${details}
