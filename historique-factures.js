@@ -145,7 +145,7 @@ liste
             `;
         });
 
-        container.innerHTML += `
+        container.innerHTML += 
 
         <div class="vehicule-card card-ok">
 
@@ -153,12 +153,26 @@ liste
 
                 <span>🚑 ${vhc}</span>
 
-               <span>
-    ${liste.length} facture(s)
+              const anneeActuelle =
+new Date().getFullYear();
+
+const facturesAnnee =
+liste.filter(f =>
+    new Date(f[0]).getFullYear() ===
+    anneeActuelle
+);
+
+const totalAnnee =
+facturesAnnee.reduce(
+    (somme, f) =>
+        somme + Number(f[6] || 0),
+    0
+);
+<span>
+    ${facturesAnnee.length} facture(s) ${anneeActuelle}
     <br>
     CHF ${totalAnnee.toFixed(2)}
 </span>
-
             </div>
 
             <div class="preview">
