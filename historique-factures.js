@@ -117,13 +117,23 @@ Object.keys(groupes)
         new Date(f[0])
         .toLocaleDateString("fr-CH");
 
-        preview += `
-        <div style="margin-bottom:8px;">
-            ${date}<br>
-            ${f[5]}<br>
-            CHF ${f[6]}
-        </div>
-        `;
+       preview += `
+<div class="facture-preview">
+
+    <div class="facture-date">
+        ${date}
+    </div>
+
+    <div class="facture-detail">
+        ${f[5]}
+    </div>
+
+    <div class="facture-montant">
+        CHF ${f[6]}
+    </div>
+
+</div>
+`;
 
     });
 
@@ -137,13 +147,23 @@ Object.keys(groupes)
         new Date(f[0])
         .toLocaleDateString("fr-CH");
 
-        details += `
-        <div style="margin-bottom:10px;">
-            ${date}<br>
-            ${f[5]}<br>
-            CHF ${f[6]}
-        </div>
-        `;
+       details += `
+<div class="facture-preview">
+
+    <div class="facture-date">
+        ${date}
+    </div>
+
+    <div class="facture-detail">
+        ${f[5]}
+    </div>
+
+    <div class="facture-montant">
+        CHF ${f[6]}
+    </div>
+
+</div>
+`;
 
     });
 
