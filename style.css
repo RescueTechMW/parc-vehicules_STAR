@@ -318,3 +318,12 @@ h1{
 .factures-details.open{
     display:block;
 }
+.hidden{
+    display:none;
+}
+
+.factures-details{
+    margin-top:15px;
+    border-top:1px solid #ddd;
+    padding-top:10px;
+}
