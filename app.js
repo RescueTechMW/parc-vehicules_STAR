@@ -1,4 +1,4 @@
-console.log("APP VERSION 28-08-2026 20h10");
+console.log("APP VERSION 08-09-2026 13h17");
 
 let clicsLogo = 0;
 
